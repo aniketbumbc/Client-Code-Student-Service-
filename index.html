@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="TestApp">
+<head>
+    <title>Student Data</title>
+</head>
+<body ng-controller="TestController"> 
+
+    <h1>{{test}}</h1>
+
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>Studnet ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>School</th>
+                <th>Fees</th>
+            </tr>
+        </thead>
+        <tr ng-repeat = "Data in data">
+            <td>{{Data.Id}}</td>
+            <td>{{Data.Name}}</td>
+            <td>{{Data.Gender}}</td>
+            <td>{{Data.BirthDate}}</td>
+            <td>{{Data.School}}</td>
+            <td>{{Data.Fees}}</td>
+        </tr>
+    </table>
+
+    <h3> Please Enter Student ID </h3>
+<input type="text" id=txtId placeholder="Enter ID" ng-model="inputValue">
+<button id="btnId" ng-click="getData(inputValue)"> Get Info</button>
+
+<h4 style='color:red'>  {{name}}  {{school}}  {{fees}}</h4>
+
+    <script src="moment.js"></script>
+<script src ="angular.min.js"></script>
+<script src="./App.js"></script>
+<script src="./Controller.js"></script>
+<script src="./Service.js"></script>
+</body>    
+</html>
